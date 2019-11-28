@@ -13,11 +13,13 @@ public class User {
     private String password;
 
 	public User() {
-		// Needed for Jackson deserialisation
+        // Needed for Jackson deserialisation
+        super();
     }
     // Used for create and update operations.
 
     public User(int userId, String userName, String email, String password){
+        super();
         this.userId = userId;
 		this.userName = userName;
 		this.email = email;
@@ -27,7 +29,8 @@ public class User {
     // Used to return info on specific users and the list of all users.
 
 	public User(int userId, String userName, String email, String hashedPassword, String salt) {
-		this.userId = userId;
+        super();
+        this.userId = userId;
 		this.userName = userName;
 		this.email = email;
 		this.hashedPassword = hashedPassword;
