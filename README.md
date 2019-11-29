@@ -1,6 +1,9 @@
 # REST Service - Distributed Systems Project 2019 (part 2) 
 
-A 2 part distributed user account management system, part two is a RESTful User Account Service. This was developed entirely in gitpod.io development environment.  
+A 2 part distributed user account management system, part two is a RESTful User Account Service. This was developed entirely in gitpod development environment. 
+
+
+
 
 
 #### Information:
@@ -23,6 +26,9 @@ The two interconnected services you’ll develop are as follows:
 • Part 1: gRPC Password service
 
 • Part 2: RESTful User Account Service
+
+Consideration:
+Run mvn package in the project folder if any of the folders in the target folder appear deleted on gitpod. Strange error appears infrequently in the API at line 6 path: 
 
 ## Links used:
 
