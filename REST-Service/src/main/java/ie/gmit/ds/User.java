@@ -1,15 +1,22 @@
 package ie.gmit.ds;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
 
 public class User {
 
-	private int userId;
-	private String userName;
+    @NotNull
+    private int userId;
+    @NotBlank @Length(min=2, max=255)
+    private String userName;
+    @Pattern(regexp=".+@.+\\.[a-z]+")
 	private String email;
 	private String hashedPassword;
     private String salt;
-    
+    @NotNull
     private String password;
 
 	public User() {
@@ -65,6 +72,17 @@ public class User {
     @JsonProperty
 	public String getPassword() {
 		return password;
-	}
+    }
+    
+    @Override
+    public String toString() {
+        return "Emplyee [User id: " + userId + ", User Name: " + userName + ", Email: "
+                + email + ", Password: " + hashedPassword + "]";
+    }
 
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    
 }
